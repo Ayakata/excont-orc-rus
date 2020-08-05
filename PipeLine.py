@@ -24,7 +24,8 @@ def make_ocr():
     onlyfiles = [join(imagePath, f) for f in listdir(imagePath) if isfile(join(imagePath, f))]
     # Set weights and alphabet to Detector & Recognizer
     detector = Detector(weights='clovaai_general')
-    recognizer = Recognizer(alphabet=recognizer_alphabet, weights=weights)
+    recognizer = Recognizer(alphabet=recognizer_alphabet)
+    recognizer.model.load_weights(weights)
     # Get a set of three example images
     images = list( map( lambda name: readBytes(name), onlyfiles ))
 
