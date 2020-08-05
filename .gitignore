@@ -1,0 +1,4 @@
+credentials.ini
+TEMP/
+.ipynb_checkpoints/
+__pycache__/
